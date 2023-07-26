@@ -1,21 +1,39 @@
 const products = [
+  {
+    name: "PlayStation 5",
+    imageUrl:
+      "https://basic-tutorials.de/wp-content/uploads/2020/09/PlayStation-5.jpg",
+    description:
+      "PlayStation 5 (PS5) is a home video game console developed by Sony Interactive Entertainment. Announced in 2019 as the successor to the PlayStation 4, the PS5 was released on November 12, 2020.",
+    price: 888,
+    countInStock: 15,
+  },
+  {
+    name: "Xbox Series X 5",
+    imageUrl:
+      "https://1.bp.blogspot.com/-k2-Os_7IDms/XfZzTjoEaeI/AAAAAAABKBE/JMXix6uAtv0juAmYh9LhYpGEe6pkPRq5ACLcBGAsYHQ/s1600/Microsoft%2BXbox%2BSeries%2BX%2B1.jpg",
+    description:
+      "Xbox head Phil Spencer said that Microsoft was prioritizing high frame rates and faster load times over higher resolutions; the Series X achieves this via the better-matched capabilities of the CPU and graphics processing unit.",
+    price: 999,
+    countInStock: 15,
+  },
+  {
+    name: "Iphone 12",
+    imageUrl:
+      "https://images.unsplash.com/photo-1605787020600-b9ebd5df1d07?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1463&q=80",
+    description:
+      "Welcome to a new era of iPhone. Beautifully bright 6.1-inch Super Retina XDR display.1 Ceramic Shield with 4x better drop performance.2 Incredible low-light photography with Night mode on all cameras. Cinema-grade Dolby Vision video recording, editing, and playback.",
+    price: 1099,
+    countInStock: 10,
+  },
     {
-      name: "PlayStation 5",
+      name: "Canon EOS R7",
       imageUrl:
-        "https://images.unsplash.com/photo-1606813907291-d86efa9b94db?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1352&q=80",
+        "https://th.bing.com/th/id/OIP.f4TA5KQomh3JIEGejX2akgHaEK?w=298&h=180&c=7&r=0&o=5&pid=1.7",
       description:
-        "PlayStation 5 (PS5) is a home video game console developed by Sony Interactive Entertainment. Announced in 2019 as the successor to the PlayStation 4, the PS5 was released on November 12, 2020 in Australia, Japan, New Zealand, North America, Singapore, and South Korea, and November 19, 2020 onwards in other major markets except China and India.",
+        "Not only is the Canon EOS R7 the manufacturer's finest APS-C mirrorless camera to date, but it may also be the finest APS-C camera on the market period. It's lightning-fast both mechanically and electronically, the resolution offers glorious detail as well as the opportunity to crop into your shots. ",
       price: 499,
       countInStock: 15,
-    },
-    {
-      name: "Iphone 12",
-      imageUrl:
-        "https://images.unsplash.com/photo-1605787020600-b9ebd5df1d07?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1463&q=80",
-      description:
-        "Welcome to a new era of iPhone. Beautifully bright 6.1-inch Super Retina XDR display.1 Ceramic Shield with 4x better drop performance.2 Incredible low-light photography with Night mode on all cameras. Cinema-grade Dolby Vision video recording, editing, and playback. Powerful A14 Bionic chip. And new MagSafe accessories for easy attach and faster wireless charging.3 Let the fun begin.",
-      price: 1099,
-      countInStock: 10,
     },
     {
       name: "Cannon EOS-1D",

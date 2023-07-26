@@ -3,6 +3,8 @@ import Table from 'react-bootstrap/Table'
 import OneProduct from './OneProduct'
 import { Button } from 'react-bootstrap'
 import ProductList from './ProductList'
+import styles from './Cart.module.css'
+import { Link } from 'react-router-dom'
 
 const Cart = ({
   products,
@@ -13,44 +15,53 @@ const Cart = ({
 }) => {
   console.log(products)
 
+  if (products.length > 0) {
+    
+
   const getTotal = () => {
     return products
       .reduce((sum, { price, quantity }) => sum + price * quantity, 0)
       .toFixed(2)
   }
 
-  if (products.length > 0) {
     return (
-      <div>
-        <h2>Cart</h2>
+      <div className={styles.ShoppingCart}>
+        <h4>Shopping Cart</h4>
         <Table size="sm">
           <thead>
             <tr>
-              <th>Num</th>
-              <th>Product name</th>
-              <th className="d-flex justify-content-evenly">Quantity</th>
-              <th>Price</th>
-              <th>Remove</th>
+              <th>Item</th>
+              <th>Name</th>
+              <th>Quantity</th>
+              <th>Unit Price</th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
+
             {products.map((oneProduct, index) => (
+              
               <tr className='container-fluid h-100' key={index}>
-                <td>{index + 1} </td>
+                
+                <td>
+                   <div>
+                    <img className={styles.cartImg} src={oneProduct.imageUrl}/>
+                    </div>
+                    </td>
                 <td>{oneProduct.name} </td>
-                <td className="d-flex align-items-center justify-content-evenly">
-                  <Button onClick={() => decreaseQuantity(oneProduct)}>
+                <td className={styles.IncreaseDecrease}>
+                  <Button className={styles.cartBtn} onClick={() => decreaseQuantity(oneProduct)}>
                     -
                   </Button>
                   {oneProduct.quantity}
-                  <Button onClick={() => increaseQuantity(oneProduct)}>
+                  <Button className={styles.cartBtn} onClick={() => increaseQuantity(oneProduct)}>
                     +
                   </Button>
                 </td>
-                <td>{oneProduct.price} € </td>
+                <td> {`${oneProduct.quantity}`* `${oneProduct.price}`} € </td>
                 <td>
-                  <Button onClick={() => deleteProduct(oneProduct)}>
-                    Remove item
+                  <Button className={styles.cartRemoveItem} onClick={() => deleteProduct(oneProduct)}>
+                    Remove
                   </Button>
                 </td>
               </tr>
@@ -62,13 +73,39 @@ const Cart = ({
               <td></td> 
               <td><strong>Total Sum</strong></td>
               <td>{getTotal()} €  </td>
-              <td><Button onClick={clearCart} > Clear Cart </Button></td>
+              <td><Button className={styles.cartRemoveItem} > BUY NOW </Button></td>
             </tr>
           </tfoot>
         </Table>
+        
       </div>
+      
     )
-  } else return <div>Your Cart Is Empty</div>
+  } else return <div className={styles.ShoppingCart}>
+  <h4>Shopping Cart</h4>
+  <Table size="sm">
+    <thead>
+      <tr>
+        <th>Item</th>
+        <th>Name</th>
+        <th>Quantity</th>
+        <th>Unit Price</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><h6>Your Cart is empty. Go to <Link to="/products" className={styles.link}>Catalogue.</Link> </h6>.</td>
+          <td></td>
+          <td></td>
+          <td></td>
+
+        </tr>
+    </tbody>  
+    
+  </Table>
+  
+</div>
 }
 
 export default Cart

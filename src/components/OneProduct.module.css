@@ -1,0 +1,41 @@
+.CardContainer {
+    width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+   
+}
+
+.Card {
+    width: 400px;
+    margin: 50px 20px !important;
+    font-family:sans-serif;
+
+}
+
+.CardImg {
+   height: 250px;
+}
+.CardTitle {
+    text-align: center;
+}
+
+
+.CardText {
+    text-align: justify;
+    margin-top: 10px !important;
+}
+                
+.CardButton {
+    float: right;
+    background-color: #222 !important;
+    color: white !important;
+    font-weight: 500 !important;
+    border: none !important;
+}
+
+.CardButton:hover {
+    font-style: italic;
+}
+
+            

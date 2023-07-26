@@ -1,26 +1,42 @@
-import React from 'react';
-import Carousel from 'react-bootstrap/Carousel';
-import data from '../data/products';
+import React from 'react'
+import Carousel from 'react-bootstrap/Carousel'
+import data from '../data/products'
+import styles from './Home.module.css'
+import { Link } from 'react-router-dom'
+
+import { useState } from 'react'
 
 const Home = () => {
-    console.log(data);
+  const [hoverleft, setHoverLeft] = useState(false)
+  const [hoverright, setHoverRight] = useState(false)
+
+  const mouseLeft = () => {
+    hoverleft ? setHoverLeft('') : setHoverLeft(`${styles.HoverLeft}`)
+  }
+
+  const mouseRight = () => {
+    hoverright ? setHoverRight('') : setHoverRight(`${styles.HoverRight}`)
+  }
+
   return (
-    <Carousel variant="dark">
-      {data.map((oneProduct, index)=> (
-        <Carousel.Item key={index}>
-          <img
-            className="d-block w-100"
-            src={oneProduct.imageUrl}
-            alt={oneProduct.name}
-          />
-          <Carousel.Caption>
-            <h5>{oneProduct.name}</h5>
-            <p>Price {oneProduct.price} €</p>
-          </Carousel.Caption>
-        </Carousel.Item>
-      ))
-      }
-    </Carousel>
+    <body>
+      <div className={`${styles.Container} ${hoverleft} ${hoverright}`}>
+        <div
+          className={`${styles.Split} ${styles.Left}`}
+          onMouseEnter={mouseLeft}
+        >
+          <h1>Playstation 5</h1>
+          <Link to="/products" className={styles.Btn}>View More</Link>
+        </div>
+        <div
+          className={`${styles.Split} ${styles.Right}`}
+          onMouseEnter={mouseRight}
+        >
+          <h1>Xbox Series X 5</h1>
+          <Link to="/products" className={styles.Btn}>View More</Link>
+        </div>
+      </div>
+    </body>
   )
 }
 

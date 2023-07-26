@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Muli&display=swap');
+
+:root {
+    --left-bg-color: rgba(87,84, 236, 0.7);
+    --right-bg-color: rgba(43, 43, 43, 0.8);
+    --left-btn-hover-color: rgba(87, 84, 236, 1);
+    --right-btn-hover-color: rgba(28, 122, 28, 1);
+    --hover-width: 75%;
+    --other-width: 25%;
+    --speed: 1000ms;
+}
+* {
+    box-sizing: border-box;
+    margin: 0 !important;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    height: 100vh;
+    margin: 0;
+    width: 100vw;
+}
+
+.Split h1 {
+    font-size: 4rem;
+    color: #fff;
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+}
+
+.Btn {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 50%;
+    top: 40%;
+    transform: translateX(-50%);
+    text-decoration: none;
+    color: #fff;
+    border: #fff solid 0.2rem;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    width: 15rem;
+    padding: 1.5rem;
+}
+
+.Split.Left .Btn:hover {
+    background-color: var(--left-btn-hover-color);
+    border-color: var(--left-btn-hover-color);
+}
+
+.Split.Right .Btn:hover {
+    background-color: var(--right-btn-hover-color);
+    border-color: var(--right-btn-hover-color);
+}
+
+.Container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background: #333;
+}
+
+.Split {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.Split.Left {
+    left: 0;
+    background: url('https://basic-tutorials.de/wp-content/uploads/2020/09/PlayStation-5.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.Split.Left::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--left-bg-color);
+}
+
+.Split.Right {
+    right: 0;
+    background: url('https://1.bp.blogspot.com/-k2-Os_7IDms/XfZzTjoEaeI/AAAAAAABKBE/JMXix6uAtv0juAmYh9LhYpGEe6pkPRq5ACLcBGAsYHQ/s1600/Microsoft%2BXbox%2BSeries%2BX%2B1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+} 
+
+.Split.Right::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--right-bg-color);
+}
+
+.Split.Right, .Split.Left, .Split.Right::before, .Split.Left::before {
+    transition: all var(--speed) ease-in-out;
+}
+
+.HoverLeft .Left {
+    width: var(--hover-width);
+}
+
+.HoverLeft .Right{
+    width: var(--other-width);
+}
+
+.HoverRight .Right{
+    width: var(--hover-width);
+}
+
+.HoverRight .Left{
+    width: var(--other-width);
+}
+
+
+@media(max-width: 800px) {
+    h1 {
+        font-size: 2rem;
+        top: 30%;
+      }
+
+    .Btn {
+        padding: 1.2rem;
+        width: 12rem;
+      }
+}

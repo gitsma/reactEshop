@@ -2,9 +2,7 @@ import React from 'react'
 import OneProduct from './OneProduct'
 import Home from './Home'
 import Cart from './Cart'
-
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-
 import { useState } from 'react'
 
 const ProductList = () => {
