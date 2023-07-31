@@ -35,6 +35,12 @@ h6 {
         padding: 5px; 
         font-size: small;
     }
+    .ShoppingCart h4 {
+        display: flex;
+        justify-content: center;
+        padding-bottom: 30px;
+        padding-top: 30px;
+    }
     .cartImg {
         height: 33px; 
         width: 50px;
@@ -50,5 +56,8 @@ h6 {
     }
     .IncreaseDecrease {
         font-size: small;
+    }
+    h6 {
+        padding: 5px;
     }
 }

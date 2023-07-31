@@ -135,3 +135,25 @@ body {
         width: 12rem;
       }
 }
+
+@media(max-width: 500px) {
+    .Split h1 {
+        font-size: 1rem;
+        top: 30%;
+      }
+
+    .Btn {
+    border: #fff solid 0.1rem;
+    width: 7rem;
+    padding: 0.5rem;
+}
+
+    .Split.Left {
+        background-size: contain;
+    }
+
+    .Split.Right {
+        background-size: contain;
+
+    }
+}
